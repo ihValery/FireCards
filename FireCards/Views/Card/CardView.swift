@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CardView: View {
-  var card: Card
+  var cardViewModel: CardViewModel
   @State var showContent: Bool = false
   @State var viewState = CGSize.zero
   @State var showAlert = false
@@ -14,7 +14,7 @@ struct CardView: View {
     .frame(width: 250, height: 400)
     .background(Color.rwGreen)
     .cornerRadius(20)
-    .shadow(color: .rwDark.opacity(0.3), radius: 5, x: 10, y: 10)
+    .shadow(color: .rwLight.opacity(0.1), radius: 10, x: 10, y: 10)
     .rotation3DEffect(.degrees(showContent ? 180.0 : 0.0), axis: (x: 0, y: -1, z: 0))
     .offset(x: viewState.width, y: viewState.height)
     .animation(.spring(response: 0.6, dampingFraction: 0.8, blendDuration: 0))
@@ -48,27 +48,23 @@ struct CardView: View {
   
   var frontView: some View {
     VStack(alignment: .center) {
-      Spacer()
-      Text(card.question)
+      Text(cardViewModel.card.question)
         .foregroundColor(.rwLight)
-        .font(.system(size: 20))
+        .font(.title2)
         .fontWeight(.bold)
         .multilineTextAlignment(.center)
         .padding(20.0)
-      Spacer()
     }
   }
   
   var backView: some View {
     VStack(alignment: .center) {
-      Spacer()
-      Text(card.answer)
+      Text(cardViewModel.card.answer)
         .foregroundColor(.rwLight)
-        .font(.body)
-        .padding(20.0)
+        .font(.title)
+        .fontWeight(.bold)
         .multilineTextAlignment(.center)
         .animation(.easeInOut)
-      Spacer()
     }
     .rotation3DEffect(.degrees(180), axis: (x: 0.0, y: 1.0, z: 0.0))
   }
@@ -77,6 +73,6 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
   static var previews: some View {
     let card = testData[0]
-    return CardView(card: card)
+    return CardView(cardViewModel: CardViewModel(card: card))
   }
 }
