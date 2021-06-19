@@ -6,9 +6,14 @@ import FirebaseFirestoreSwift
 import Combine
 
 class CardRepository: ObservableObject {
+  @Published var cards: [Card] = []
   //Oбъявите path и присвойте значение cards. Это название коллекции в Firestore.
   private let path: String = "cards"
   private let store = Firestore.firestore()
+  
+  init() {
+    get()
+  }
   
   func add(_ card: Card) {
     do {
@@ -16,5 +21,22 @@ class CardRepository: ObservableObject {
     } catch {
       fatalError("Unable to add card: \(error.localizedDescription).")
     }
+  }
+  
+  func get() {
+    store.collection(path)
+      //добавьте слушателя для получения изменений в коллекции.
+      .addSnapshotListener { querySnapshot, error in
+        if let error = error {
+          print("Error getting cards: \(error.localizedDescription)")
+          return
+        }
+        //Используйте compactMap (_ :) on querySnapshot.documents для перебора всех элементов.
+        self.cards = querySnapshot?.documents.compactMap { document in
+          //Сопоставьте каждый документ с Card использованием data(as:decoder:). Вы можете сделать это благодаря FirebaseFirestoreSwift, который вы импортировали вверху, и потому что Card соответствует Codable
+          try? document.data(as: Card.self)
+          //Если querySnapshot есть nil, вы будете установить вместо пустого массива.
+        } ?? []
+      }
   }
 }
