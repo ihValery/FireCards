@@ -39,4 +39,15 @@ class CardRepository: ObservableObject {
         } ?? []
       }
   }
+  
+  func update(_ card: Card) {
+    guard let cardId = card.id  else { return }
+    do {
+      //Используя path и cardId, он получает ссылку на документ в коллекции карточек,
+      //а затем обновляет поля, передавая card в setData(from).
+      try store.collection(path).document(cardId).setData(from: card)
+    } catch {
+      fatalError("Unable to update card: \(error.localizedDescription).")
+    }
+  }
 }

@@ -48,25 +48,72 @@ struct CardView: View {
   
   var frontView: some View {
     VStack(alignment: .center) {
+      Spacer()
       Text(cardViewModel.card.question)
         .foregroundColor(.rwLight)
         .font(.title2)
         .fontWeight(.bold)
         .multilineTextAlignment(.center)
         .padding(20.0)
+      Spacer()
+      if !cardViewModel.card.successful {
+        Text("Вы раньше ответили на этот вопрос неправильно")
+          .foregroundColor(.rwLight)
+          .font(.footnote)
+          .multilineTextAlignment(.center)
+          .padding(20.0)
+      }
     }
   }
   
   var backView: some View {
     VStack(alignment: .center) {
+      Spacer()
       Text(cardViewModel.card.answer)
         .foregroundColor(.rwLight)
         .font(.title)
         .fontWeight(.bold)
         .multilineTextAlignment(.center)
+        .padding(20.0)
         .animation(.easeInOut)
+      Spacer()
+      
+      HStack(spacing: 40) {
+        Button(action: markCardAsUnsuccesful, label: {
+          Image(systemName: "hand.thumbsdown.fill")
+        })
+        .padding()
+        .background(Color.rwDark)
+        .clipShape(Circle())
+        
+        Button(action: markCardAsSuccesful, label: {
+          Image(systemName: "hand.thumbsup.fill")
+        })
+        .padding()
+        .background(Color.rwDark)
+        .clipShape(Circle())
+      }
+      .font(.title)
+      .foregroundColor(.rwLight)
     }
     .rotation3DEffect(.degrees(180), axis: (x: 0.0, y: 1.0, z: 0.0))
+  }
+  
+  func update(card: Card) {
+    cardViewModel.update(card: card)
+    showContent.toggle()
+  }
+  
+  private func markCardAsUnsuccesful() {
+    var updateCard = cardViewModel.card
+    updateCard.successful = false
+    update(card: updateCard)
+  }
+  
+  private func markCardAsSuccesful() {
+    var updateCard = cardViewModel.card
+    updateCard.successful = true
+    update(card: updateCard)
   }
 }
 

@@ -18,4 +18,8 @@ class CardViewModel: ObservableObject, Identifiable {
       .assign(to: \.id, on: self)
       .store(in: &cancellables)
   }
+  
+  func update(card: Card) {
+    cardRepository.update(card)
+  }
 }

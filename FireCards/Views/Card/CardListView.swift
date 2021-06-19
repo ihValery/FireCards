@@ -31,7 +31,7 @@ struct CardListView: View {
       .sheet(isPresented: $showForm) {
         NewCardForm(cardListViewModel: CardListViewModel())
       }
-      .navigationBarTitle("🔥 Fire Cards")
+      .navigationBarTitle("Fire Cards")
       
       // swiftlint:disable multiple_closures_with_trailing_closure
       .navigationBarItems(trailing: Button(action: { showForm.toggle() }) {
