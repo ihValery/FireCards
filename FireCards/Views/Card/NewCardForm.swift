@@ -8,25 +8,34 @@ struct NewCardForm: View {
   
   var body: some View {
     VStack(alignment: .center, spacing: 30) {
+      
       VStack(alignment: .leading, spacing: 10) {
         Text("Question")
-          .foregroundColor(.gray)
+          .foregroundColor(.rwGreen)
         TextField("Enter the question", text: $question)
           .textFieldStyle(RoundedBorderTextFieldStyle())
       }
+      
       VStack(alignment: .leading, spacing: 10) {
         Text("Answer")
-          .foregroundColor(.gray)
+          .foregroundColor(.rwGreen)
         TextField("Enter the answer", text: $answer)
           .textFieldStyle(RoundedBorderTextFieldStyle())
       }
-      Button(action: { addCard() }) {
+      
+      Button(action: addCard) {
         Text("Add New Card")
-          .foregroundColor(.blue)
+          .foregroundColor(.rwGreen)
+          .bold().padding(10)
+          .frame(maxWidth: .infinity)
+          .background(Color.rwLight)
+          .cornerRadius(8)
       }
+      .padding(.top)
       Spacer()
     }
     .padding(EdgeInsets(top: 80, leading: 40, bottom: 0, trailing: 40))
+    .background(Image("rwdevcon-bg"))
   }
   
   private func addCard() {

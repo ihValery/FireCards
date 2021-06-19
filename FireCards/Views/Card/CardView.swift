@@ -40,6 +40,7 @@ struct CardView: View {
         title: Text("Remove Card"),
         message: Text("Are you sure you want to remove this card?"),
         primaryButton: .destructive(Text("Remove")) {
+          cardViewModel.remove()
         },
         secondaryButton: .cancel()
       )
