@@ -18,6 +18,7 @@
 		80278443267E549800F5A3CB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80278442267E549800F5A3CB /* Color.swift */; };
 		80278445267E589600F5A3CB /* CardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80278444267E589600F5A3CB /* CardListViewModel.swift */; };
 		80278447267E613500F5A3CB /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80278446267E613500F5A3CB /* CardViewModel.swift */; };
+		80278466267EAA2500F5A3CB /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80278465267EAA2500F5A3CB /* AuthenticationService.swift */; };
 		EE8848F4256D987F00F990F9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE8848F3256D987F00F990F9 /* FirebaseAuth */; };
 		EE8848F6256D987F00F990F9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EE8848F5256D987F00F990F9 /* FirebaseFirestore */; };
 		EE8848F8256D987F00F990F9 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = EE8848F7256D987F00F990F9 /* FirebaseFirestoreSwift-Beta */; };
@@ -41,6 +42,7 @@
 		80278442267E549800F5A3CB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		80278444267E589600F5A3CB /* CardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewModel.swift; sourceTree = "<group>"; };
 		80278446267E613500F5A3CB /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		80278465267EAA2500F5A3CB /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		EE9B4CC024A236A200CEA474 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		EE9B4CC224A2884200CEA474 /* NewCardForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardForm.swift; sourceTree = "<group>"; };
 		EE9B4CC424A2899700CEA474 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		EEA645CE24C26AFB00BB35F5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				80278465267EAA2500F5A3CB /* AuthenticationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				80278447267E613500F5A3CB /* CardViewModel.swift in Sources */,
 				80278445267E589600F5A3CB /* CardListViewModel.swift in Sources */,
 				18D775C122AD944300AE281E /* AppDelegate.swift in Sources */,
+				80278466267EAA2500F5A3CB /* AuthenticationService.swift in Sources */,
 				80278440267E525000F5A3CB /* CardRepository.swift in Sources */,
 				EE9B4CC524A2899700CEA474 /* CardListView.swift in Sources */,
 				EE9B4CCA24A2C4BB00CEA474 /* Card.swift in Sources */,

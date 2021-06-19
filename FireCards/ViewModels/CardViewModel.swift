@@ -22,4 +22,8 @@ class CardViewModel: ObservableObject, Identifiable {
   func update(card: Card) {
     cardRepository.update(card)
   }
+  
+  func remove() {
+    cardRepository.remove(card)
+  }
 }
