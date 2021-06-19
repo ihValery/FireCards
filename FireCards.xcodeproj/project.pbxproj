@@ -13,6 +13,10 @@
 		18D775C722AD944400AE281E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C622AD944400AE281E /* Assets.xcassets */; };
 		18D775CA22AD944400AE281E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C922AD944400AE281E /* Preview Assets.xcassets */; };
 		18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D775DA22AD963800AE281E /* LaunchScreen.storyboard */; };
+		8027843E267E516C00F5A3CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8027843D267E516B00F5A3CB /* GoogleService-Info.plist */; };
+		80278440267E525000F5A3CB /* CardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8027843F267E525000F5A3CB /* CardRepository.swift */; };
+		80278443267E549800F5A3CB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80278442267E549800F5A3CB /* Color.swift */; };
+		80278445267E589600F5A3CB /* CardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80278444267E589600F5A3CB /* CardListViewModel.swift */; };
 		EE8848F4256D987F00F990F9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE8848F3256D987F00F990F9 /* FirebaseAuth */; };
 		EE8848F6256D987F00F990F9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EE8848F5256D987F00F990F9 /* FirebaseFirestore */; };
 		EE8848F8256D987F00F990F9 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = EE8848F7256D987F00F990F9 /* FirebaseFirestoreSwift-Beta */; };
@@ -31,6 +35,10 @@
 		18D775C922AD944400AE281E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18D775CE22AD944400AE281E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D775DE22AD96B400AE281E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8027843D267E516B00F5A3CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8027843F267E525000F5A3CB /* CardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRepository.swift; sourceTree = "<group>"; };
+		80278442267E549800F5A3CB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		80278444267E589600F5A3CB /* CardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewModel.swift; sourceTree = "<group>"; };
 		EE9B4CC024A236A200CEA474 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		EE9B4CC224A2884200CEA474 /* NewCardForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardForm.swift; sourceTree = "<group>"; };
 		EE9B4CC424A2899700CEA474 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
@@ -77,12 +85,14 @@
 				EEB567B924BA3209004AC4B3 /* ViewModels */,
 				EE9B4CD424A3A65900CEA474 /* Views */,
 				EE9B4CC824A2C3E300CEA474 /* Models */,
+				80278441267E548700F5A3CB /* Extension */,
 				18D775C022AD944300AE281E /* AppDelegate.swift */,
 				18D775C222AD944300AE281E /* SceneDelegate.swift */,
 				18D775C422AD944300AE281E /* ContentView.swift */,
 				18D775C622AD944400AE281E /* Assets.xcassets */,
 				18D775DA22AD963800AE281E /* LaunchScreen.storyboard */,
 				18D775CE22AD944400AE281E /* Info.plist */,
+				8027843D267E516B00F5A3CB /* GoogleService-Info.plist */,
 				18D775C822AD944400AE281E /* Preview Content */,
 			);
 			path = FireCards;
@@ -94,6 +104,14 @@
 				18D775C922AD944400AE281E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		80278441267E548700F5A3CB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				80278442267E549800F5A3CB /* Color.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		EE9B4CBD24A1F47B00CEA474 /* Card */ = {
@@ -132,6 +150,7 @@
 		EEB567B924BA3209004AC4B3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				80278444267E589600F5A3CB /* CardListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -139,6 +158,7 @@
 		EEB567BA24BA3213004AC4B3 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				8027843F267E525000F5A3CB /* CardRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -211,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */,
+				8027843E267E516C00F5A3CB /* GoogleService-Info.plist in Resources */,
 				18D775CA22AD944400AE281E /* Preview Assets.xcassets in Resources */,
 				18D775C722AD944400AE281E /* Assets.xcassets in Resources */,
 			);
@@ -244,13 +265,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80278445267E589600F5A3CB /* CardListViewModel.swift in Sources */,
 				18D775C122AD944300AE281E /* AppDelegate.swift in Sources */,
+				80278440267E525000F5A3CB /* CardRepository.swift in Sources */,
 				EE9B4CC524A2899700CEA474 /* CardListView.swift in Sources */,
 				EE9B4CCA24A2C4BB00CEA474 /* Card.swift in Sources */,
 				18D775C322AD944300AE281E /* SceneDelegate.swift in Sources */,
 				EE9B4CC124A236A200CEA474 /* CardView.swift in Sources */,
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
 				EE9B4CC324A2884200CEA474 /* NewCardForm.swift in Sources */,
+				80278443267E549800F5A3CB /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
