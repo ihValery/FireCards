@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>697952725394-oij9gnu4op47i7hsv62absggtliddaft.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.697952725394-oij9gnu4op47i7hsv62absggtliddaft</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCTt4H_1fZvJddNpUckijLaIJsfDn7tT8Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>697952725394</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ihValery.firecards</string>
+	<key>PROJECT_ID</key>
+	<string>ihvaleryfirecards</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ihvaleryfirecards.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:697952725394:ios:b624ce737980f8e007b94b</string>
+</dict>
+</plist>
